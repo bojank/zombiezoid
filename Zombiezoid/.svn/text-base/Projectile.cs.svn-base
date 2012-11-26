@@ -1,0 +1,152 @@
+﻿using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace Zombiezoid
+{
+
+    class Projectile
+    {
+        public Vector2 Position
+        {
+            get { return position; }
+        }
+        private Vector2 position;
+
+        private Vector2 previousPosition;
+
+        public Vector2 Velocity
+        {
+            get { return velocity; }
+        }
+        private Vector2 velocity;
+
+        public bool IsStopped
+        {
+            get { return isStopped; }
+        }
+        private bool isStopped;
+
+        private const float MoveSpeed = 1500;
+        //private BulletType Type;
+
+        private Player player;
+
+        private float angle;
+
+        public Ray Tracer
+        {
+            get { return tracer; }
+        }
+        private Ray tracer;
+
+        private Animation fly;
+        private Sprite sprite;
+        private Rectangle localBounds;
+        private Map map;
+
+        private int damage;
+        private int mindmg;
+        private int maxdmg;
+        //public static readonly Vector2 Size = new Vector2(Width, Height);
+
+        public Rectangle BoundingRectangle
+        {
+            get
+            {
+                int left = (int)Math.Round(Position.X - sprite.Origin.X) + localBounds.X;
+                int top = (int)Math.Round(Position.Y - sprite.Origin.Y) + localBounds.Y;
+
+                return new Rectangle(left, top, localBounds.Width, localBounds.Height);
+            }
+        }
+
+
+        public Projectile(Map map, Player player ,Vector2 startingPosition, float angle)
+        {
+            this.player = player;
+            this.angle = angle;
+            this.map = map;
+            this.damage = 300;
+            position = startingPosition;
+            velocity = new Vector2((float)Math.Cos((double)angle), (float)Math.Sin((double)angle));  
+            velocity.Normalize();
+            velocity *= MoveSpeed;
+            LoadContent();
+        }
+
+        public void LoadContent()
+        {
+            fly = new Animation(map.Content.Load<Texture2D>("Sprites/Projectiles/Default"), 0.1f, true);
+            sprite.PlayAnimation(fly);
+            int width = (int)(fly.FrameWidth * 0.35);
+            int left = (fly.FrameWidth - width) / 2;
+            int height = (int)(fly.FrameWidth * 0.2);
+            int top = (fly.FrameHeight - height) / 2;
+            localBounds = new Rectangle(left, top, width, height);
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            previousPosition = position;
+
+            float elapsed = (float) gameTime.ElapsedGameTime.TotalSeconds;
+            position += velocity*elapsed;
+
+            //tracer = new Ray(new Vector3(previousPosition, 0), new Vector3(position - previousPosition, 0));
+
+            //Wall Detection
+
+            // Get the player's bounding rectangle and find neighboring tiles.
+            Rectangle bounds = BoundingRectangle;
+            int leftTile = (int) Math.Floor((float) bounds.Left/Tile.Width);
+            int rightTile = (int) Math.Ceiling(((float) bounds.Right/Tile.Width)) - 1;
+            int topTile = (int) Math.Floor((float) bounds.Top/Tile.Height);
+            int bottomTile = (int) Math.Ceiling(((float) bounds.Bottom/Tile.Height)) - 1;
+
+            // Reset flag to search for ground collision.
+            //isOnGround = false;
+
+            // For each potentially colliding tile,
+            for (int y = topTile; y <= bottomTile; ++y)
+            {
+                for (int x = leftTile; x <= rightTile; ++x)
+                {
+                    // If this tile is collidable,
+                    TileType collision = map.GetCollision(x, y);
+                    if (collision != TileType.Ground)
+                    {
+                        // Determine collision depth (with direction) and magnitude.
+                        Rectangle tileBounds = map.GetBounds(x, y);
+                        Vector2 depth = RectangleExtensions.GetIntersectionDepth(bounds, tileBounds);
+                        if (depth != Vector2.Zero)
+                        {
+                            this.isStopped = true;
+                        }
+                    }
+                }
+            }
+            for (int i = map.Zombies.Count - 1; i >= 0; i--)
+            {
+                Zombie zombie = map.Zombies[i];
+
+                Vector2 depth = RectangleExtensions.GetIntersectionDepth(bounds, zombie.BoundingRectangle);
+                if (depth != Vector2.Zero)
+                {
+                    zombie.DoDamage(damage);
+                    if (!zombie.isAlive)
+                    {
+                        map.Zombies.Remove(zombie);
+                    }
+                    this.isStopped = true;
+                }
+            }
+            
+        }
+
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            sprite.Draw(gameTime, spriteBatch, Position, angle);
+        }
+    }
+}

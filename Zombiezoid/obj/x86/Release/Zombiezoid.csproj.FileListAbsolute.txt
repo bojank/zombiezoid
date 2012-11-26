@@ -1,0 +1,38 @@
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Fonts\Hud.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Projectiles\Default.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Player\PlayerIdle.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Zombie\ZombieIdle.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Tiles\Ground.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Tiles\Wall.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Other\Crosshair.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Maps\test.txt
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Zombiezoid.exe
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Zombiezoid.pdb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Release\Zombiezoid.exe
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Release\Zombiezoid.pdb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Zombiezoid.exe.manifest
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Zombiezoid.application
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Release\Zombiezoid.exe.manifest
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Release\Zombiezoid.application
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Release\ResolveAssemblyReference.cache
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Release\Zombiezoid.exe
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Release\Zombiezoid.pdb
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Fonts\Hud.xnb
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Projectiles\Default.xnb
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Player\PlayerIdle.xnb
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Zombie\ZombieIdle.xnb
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Tiles\Ground.xnb
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Tiles\Wall.xnb
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Other\Crosshair.xnb
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Maps\test.txt
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Zombiezoid.exe.manifest
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Zombiezoid.application
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Zombiezoid.exe
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Zombiezoid.pdb
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Release\Zombiezoid.exe.manifest
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Release\Zombiezoid.application
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Player\PlayerShoot.xnb
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sounds\GunShot1.xnb

@@ -1,0 +1,5 @@
+C:\Users\Boki\Documents\Visual Studio 2010\Projects\Zombiezoid\Zombiezoid\ZombiezoidContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\ZombiezoidContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Boki\Desktop\Game\Zombiezoid\ZombiezoidContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\ZombiezoidContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\ZombiezoidContent\obj\x86\Debug\ResolveAssemblyReference.cache

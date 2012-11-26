@@ -1,0 +1,88 @@
+c:\users\boki\documents\visual studio 2010\Projects\Zombiezoid\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.exe
+c:\users\boki\documents\visual studio 2010\Projects\Zombiezoid\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.pdb
+c:\users\boki\documents\visual studio 2010\Projects\Zombiezoid\Zombiezoid\Zombiezoid\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\boki\documents\visual studio 2010\Projects\Zombiezoid\Zombiezoid\Zombiezoid\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\boki\documents\visual studio 2010\Projects\Zombiezoid\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.exe
+c:\users\boki\documents\visual studio 2010\Projects\Zombiezoid\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.pdb
+C:\Users\Boki\Documents\Visual Studio 2010\Projects\Zombiezoid\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Test.xnb
+C:\Users\Boki\Documents\Visual Studio 2010\Projects\Zombiezoid\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Maps\test.txt
+C:\Users\Boki\Documents\Visual Studio 2010\Projects\Zombiezoid\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Tiles\Wall.xnb
+C:\Users\Boki\Documents\Visual Studio 2010\Projects\Zombiezoid\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Tiles\Ground.xnb
+C:\Users\Boki\documents\visual studio 2010\Projects\Zombiezoid\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Fonts\Hud.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.exe
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.pdb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Tiles\Wall.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Tiles\Ground.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Fonts\Hud.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.exe
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.pdb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Player\PlayerIdle.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Zombie\ZombieIdle.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Maps\test.txt
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Projectiles\Default.xnb
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Other\Crosshair.xnb
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Fonts\Hud.xnb
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Projectiles\Default.xnb
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Player\PlayerIdle.xnb
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Zombie\ZombieIdle.xnb
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Tiles\Ground.xnb
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Tiles\Wall.xnb
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Other\Crosshair.xnb
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Player\PlayerShoot.xnb
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sounds\GunShot1.xnb
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Maps\test.txt
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.exe.manifest
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.application
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.exe
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.pdb
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.exe.manifest
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.application
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.exe
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.pdb
+C:\Users\Boki\Desktop\Game\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Zombie\ZombieAttack.xnb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.exe
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.pdb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Fonts\Hud.xnb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Projectiles\Default.xnb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Player\PlayerIdle.xnb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Zombie\ZombieIdle.xnb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Tiles\Ground.xnb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Tiles\Wall.xnb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Other\Crosshair.xnb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Player\PlayerShoot.xnb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Zombie\ZombieAttack.xnb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sounds\GunShot1.xnb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Maps\test.txt
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.exe.manifest
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.application
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.exe
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.pdb
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.exe.manifest
+C:\Users\Boki\Desktop\Game\Ga\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.application
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Fonts\Hud.xnb
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Projectiles\Default.xnb
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Player\PlayerIdle.xnb
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Zombie\ZombieIdle.xnb
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Tiles\Ground.xnb
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Tiles\Wall.xnb
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Other\Crosshair.xnb
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Player\PlayerShoot.xnb
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sprites\Zombie\ZombieAttack.xnb
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Sounds\GunShot1.xnb
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Content\Maps\test.txt
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.exe.manifest
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.application
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.exe
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\bin\x86\Debug\Zombiezoid.pdb
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.exe.manifest
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.application
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.exe
+C:\Users\Boki\Desktop\Coding\Game\Ga\trunk\Zombiezoid\Zombiezoid\obj\x86\Debug\Zombiezoid.pdb

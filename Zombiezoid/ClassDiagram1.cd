@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Zombiezoid.AlignBehavior" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemies\AlignBehavior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.Behavior" Collapsed="true">
+    <Position X="5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAIgEAAgIBAAIAAAAAA=</HashCode>
+      <FileName>Enemies\Behavior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.Behaviors" Collapsed="true">
+    <Position X="2.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemies\Behaviors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.CohesionBehavior" Collapsed="true">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemies\CohesionBehavior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.FleeBehavior" Collapsed="true">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemies\FleeBehavior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.SeparationBehavior" Collapsed="true">
+    <Position X="5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemies\SeparationBehavior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.Animation" Collapsed="true">
+    <Position X="12" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAARBACAEAgAAAAIAIAAAACA=</HashCode>
+      <FileName>Animation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.Enemy" Collapsed="true">
+    <Position X="5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQACgIAAAAAYhBCDQACYogIAFkCCCAIAEQAAQPIEAg=</HashCode>
+      <FileName>Enemies\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.Hoard" Collapsed="true">
+    <Position X="3" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAEAAAAAgAAAAAACAAIAAAAAAAABgAAAARAAAA=</HashCode>
+      <FileName>Enemies\Hoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.Zombie" Collapsed="true">
+    <Position X="5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GQQAAEAAAEAgAgAIAAAABAAAAIEAAAAAAQQAQQAIAAQ=</HashCode>
+      <FileName>Enemies\Zombie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.Game" Collapsed="true">
+    <Position X="10" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAUEIAAAgACwECAgAQCBEgEADAAAgBBEQAgAAwMAQ=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.InputState" Collapsed="true">
+    <Position X="12.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQYAAKAAAAAAAAAAAAAQAAAgAAAQIAAIAoAABAAAAI=</HashCode>
+      <FileName>InputState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.Map" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAABigAAgAgAAAAAEAAAgCAAQAAAAAAAAABAAA=</HashCode>
+      <FileName>Map.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Zombiezoid.Player" Collapsed="true">
+    <Position X="10" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQcECoIAAAAATgBgCBACJAAEABgEACAIAUwAQAFGEAw=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.Program" Collapsed="true">
+    <Position X="10" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.Projectile" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAghAgCAAAIAAAEBAAEBAJABQAAgBEEQQ=</HashCode>
+      <FileName>Projectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.ProjectileManager" Collapsed="true">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgBAAAAAAAAAAAAAAAAIAABAAAAAACA=</HashCode>
+      <FileName>ProjectileManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombiezoid.RectangleExtensions" Collapsed="true">
+    <Position X="10" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>RectangleExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Zombiezoid.AIParameters" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAgIAAAAAAAAAAAACgAAAAACAAAAAAAAYAAAAA=</HashCode>
+      <FileName>Enemies\Behavior.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Zombiezoid.Sprite" Collapsed="true">
+    <Position X="10" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAgAAgAAAAMAAAABgAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Sprite.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Zombiezoid.Tile" Collapsed="true">
+    <Position X="12.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAgAAAAAAAAEAAAAAAAAAAAQIAAAAAAAA=</HashCode>
+      <FileName>Tile.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Zombiezoid.EnemyType" Collapsed="true">
+    <Position X="1" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemies\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Zombiezoid.TileType" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAgAAAAAAAAAAAAAAgAAQgAAAAAAAAEAA=</HashCode>
+      <FileName>Tile.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

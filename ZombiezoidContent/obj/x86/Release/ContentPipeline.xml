@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Fonts\Hud.spritefont</Source>
+      <Name>Fonts\Hud</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Fonts\Hud.xnb</Output>
+      <Time>2011-09-07T21:16:21.9241298-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Projectiles\Default.png</Source>
+      <Name>Sprites\Projectiles\Default</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Projectiles\Default.xnb</Output>
+      <Time>2011-09-15T01:41:24.8974815-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Player\PlayerIdle.png</Source>
+      <Name>Sprites\Player\PlayerIdle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Player\PlayerIdle.xnb</Output>
+      <Time>2012-02-29T01:37:00.1284866-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Zombie\ZombieIdle.png</Source>
+      <Name>Sprites\Zombie\ZombieIdle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Zombie\ZombieIdle.xnb</Output>
+      <Time>2011-09-07T21:02:38.1060101-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Tiles\Ground.bmp</Source>
+      <Name>Tiles\Ground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Tiles\Ground.xnb</Output>
+      <Time>2011-09-15T01:24:53.9388019-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Tiles\Wall.bmp</Source>
+      <Name>Tiles\Wall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Tiles\Wall.xnb</Output>
+      <Time>2011-09-15T01:27:38.215198-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Other\Crosshair.png</Source>
+      <Name>Sprites\Other\Crosshair</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Other\Crosshair.xnb</Output>
+      <Time>2011-09-11T20:52:10.9733947-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Player\PlayerShoot.png</Source>
+      <Name>Sprites\Player\PlayerShoot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sprites\Player\PlayerShoot.xnb</Output>
+      <Time>2012-02-29T01:28:32.9464775-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\GunShot1.wav</Source>
+      <Name>Sounds\GunShot1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\Sounds\GunShot1.xnb</Output>
+      <Time>2012-02-29T20:03:33.5606463-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Release</BuildConfiguration>
+      <CompressContent>true</CompressContent>
+      <RootDirectory>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\ZombiezoidContent\</RootDirectory>
+      <LoggerRootDirectory>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\</LoggerRootDirectory>
+      <IntermediateDirectory>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\ZombiezoidContent\obj\x86\Release\</IntermediateDirectory>
+      <OutputDirectory>E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\Zombiezoid\bin\x86\Release\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2012-02-29T00:33:50.0227252-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

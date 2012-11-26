@@ -1,0 +1,265 @@
+﻿using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace Zombiezoid
+{
+    class Zombie
+    {
+        public Map Map
+        {
+            get { return map; }
+        }
+        Map map;
+
+        public int Health
+        {
+            get { return Health; }
+        }
+        public int health;
+
+        public bool IsAlive
+        {
+        get { return isAlive; }
+        }
+
+        public bool isAlive;
+
+        public Vector2 Position
+        {
+            get { return position; }
+            //set { position = value; }
+        }
+        Vector2 position;
+
+        public Vector2 Velocity
+        {
+            get { return velocity; }
+            //set { position = value; }
+        }
+        Vector2 velocity;
+
+        public float Direction
+        {
+            get { return direction; }
+        }
+        float direction;
+
+        private Rectangle localBounds;
+
+        public Rectangle BoundingRectangle
+        {
+            get
+            {
+                int left = (int)Math.Round(Position.X - sprite.Origin.X) + localBounds.X;
+                int top = (int)Math.Round(Position.Y - sprite.Origin.Y) + localBounds.Y;
+
+                return new Rectangle(left, top, localBounds.Width, localBounds.Height);
+            }
+        }
+
+        //USED FOR RAY TRACING
+        //public BoundingBox BoundingBox
+        //{
+        //    get
+        //    {
+        //        int left = (int)Math.Round(Position.X - sprite.Origin.X) + localBounds.X;
+        //        int top = (int)Math.Round(Position.Y - sprite.Origin.Y) + localBounds.Y;
+        //        Vector3 min = new Vector3(left, top, 0);
+        //        Vector3 max = new Vector3(left + localBounds.Width, top + localBounds.Height, 0);
+        //        return new BoundingBox(min,max);
+        //    }
+        //}
+
+        private Animation idleAnimation;
+        private Animation runAnimation;
+        private Animation attackAnimation;
+        private Animation dieAnimation;
+        private Sprite sprite;
+
+        //private float waitTime;
+
+        //private const float MaxWaitTime = 0.5f;
+
+        private const float MoveSpeed = 100.0f;
+
+        public Zombie(Map map, Vector2 position, string spriteSet)
+        {
+            
+            this.map = map;
+            this.position = position;
+            this.velocity = Vector2.Zero;
+            this.health = 1000;
+            this.isAlive = true;
+
+            LoadContent(spriteSet);
+        }
+
+        public void LoadContent(string spriteSet)
+        {
+            // Load animations.
+            spriteSet = "Sprites/" + spriteSet + "/";
+            idleAnimation = new Animation(Map.Content.Load<Texture2D>(spriteSet + "ZombieIdle"), 0.15f, true);
+            runAnimation = new Animation(Map.Content.Load<Texture2D>(spriteSet + "ZombieIdle"), 0.1f, true);
+            attackAnimation = new Animation(Map.Content.Load<Texture2D>(spriteSet + "ZombieIdle"), 0.15f, false);
+            dieAnimation = new Animation(Map.Content.Load<Texture2D>(spriteSet + "ZombieIdle"), 0.15f, true);
+            sprite.PlayAnimation(idleAnimation);
+
+            // Calculate bounds within texture size.
+            int width = (int)(idleAnimation.FrameWidth * 0.8);
+            int left = (idleAnimation.FrameWidth - width) / 2;
+            int height = (int)(idleAnimation.FrameWidth * 0.8);
+            int top = (idleAnimation.FrameHeight - height) / 2;
+            localBounds = new Rectangle(left, top, width, height);
+        }
+
+        
+
+        public void Update(GameTime gameTime)
+        {
+
+            Vector2 previousPosition = Position;
+            float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            direction = (float)Math.Atan2(map.Player.Position.Y - Position.Y, map.Player.Position.X - Position.X);
+
+            //// Calculate tile position based on the side we are walking towards.
+            //float posX = Position.X + localBounds.Width / 2 ;
+            //int tileX = (int)Math.Floor(posX / Tile.Width);
+            //int tileY = (int)Math.Floor(Position.Y / Tile.Height);
+            velocity = Vector2.Zero;
+            if (Vector2.Distance(this.position, map.Player.Position) > 40)
+            {
+                // Move in the current direction
+                velocity = new Vector2((float) Math.Cos((double) direction), (float) Math.Sin((double) direction));
+                velocity.Normalize();
+                velocity = velocity*MoveSpeed*elapsed;
+                //velocity = velocity * MoveSpeed;
+            }
+            else
+            {
+                Attack();
+            }
+
+
+            //velocity.
+            position = position + velocity;
+
+            HandleCollisions();
+
+            //if (Position.X == previousPosition.X)
+            //    velocity.X = 0;
+
+            //if (Position.Y == previousPosition.Y)
+            //    velocity.Y = 0;
+        }
+
+        private void HandleCollisions()
+        {
+            // Get the player's bounding rectangle and find neighboring tiles.
+            Rectangle bounds = BoundingRectangle;
+            int leftTile = (int)Math.Floor((float)bounds.Left / Tile.Width);
+            int rightTile = (int)Math.Ceiling(((float)bounds.Right / Tile.Width)) - 1;
+            int topTile = (int)Math.Floor((float)bounds.Top / Tile.Height);
+            int bottomTile = (int)Math.Ceiling(((float)bounds.Bottom / Tile.Height)) - 1;
+
+            // Reset flag to search for ground collision.
+            //isOnGround = false;
+
+            // For each potentially colliding tile,
+            for (int y = topTile; y <= bottomTile; ++y)
+            {
+                for (int x = leftTile; x <= rightTile; ++x)
+                {
+                    // If this tile is collidable,
+                    TileType collision = map.GetCollision(x, y);
+                    if (collision != TileType.Ground)
+                    {
+                        // Determine collision depth (with direction) and magnitude.
+                        Rectangle tileBounds = Map.GetBounds(x, y);
+                        Vector2 depth = RectangleExtensions.GetIntersectionDepth(bounds, tileBounds);
+                        if (depth != Vector2.Zero)
+                        {
+                            float absDepthX = Math.Abs(depth.X);
+                            float absDepthY = Math.Abs(depth.Y);
+
+                            if (collision == TileType.Wall)
+                            {
+                                // Y Axis Collision
+                                if (absDepthY < absDepthX)
+                                {
+                                    position = new Vector2(Position.X, Position.Y + depth.Y);
+                                    if (velocity.X > 0 && absDepthX < 44)
+                                        position.X += absDepthY;
+                                    else if (velocity.X < 0 && absDepthX < 44)
+                                        position.X -= absDepthY;
+
+                                }
+                                //X Axis Collision
+                                if (absDepthX < absDepthY)
+                                {
+                                    position = new Vector2(Position.X + depth.X, Position.Y);
+                                    if (velocity.Y > 0 && absDepthY < 44)
+                                        position.Y += absDepthX;
+                                    else if (velocity.Y < 0 && absDepthY < 44)
+                                        position.Y -= absDepthX;
+                                }
+
+                                // Perform further collisions with the new bounds.
+                                bounds = BoundingRectangle;
+                            }
+
+
+                            //else if (collision == TileType.Wall) // Ignore platforms.
+                            //{
+                            //    // Resolve the collision along the X axis.
+                            //    Position = new Vector2(Position.X + depth.X, Position.Y);
+
+                            //    // Perform further collisions with the new bounds.
+                            //    bounds = BoundingRectangle;
+                            //}
+                        }
+                    }
+                }
+            }
+
+            // Save the new bounds bottom.
+            //previousBottom = bounds.Bottom;
+        }
+    
+        public void DoDamage(int damage )
+        {
+            health -= damage;
+            if (health <= 0)
+                isAlive = false;
+        }
+        //AI
+        public void Attack()
+        {
+            
+            map.Player.DoDamage(50);
+            
+        }
+
+        public void Chase()
+        {
+
+        }
+
+        public void Wonder()
+        {
+
+        }
+
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            // Stop running when the game is paused or before turning around.
+            sprite.PlayAnimation(runAnimation);
+
+
+
+            // Draw facing the way the enemy is moving.
+            sprite.Draw(gameTime, spriteBatch, Position, direction);
+        }
+    }
+}

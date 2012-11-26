@@ -1,0 +1,340 @@
+﻿using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+
+namespace Zombiezoid
+{
+    class Player
+    {
+        private Animation idleAnimation;
+        private Animation runAnimation;
+        private Animation shootAnimation;
+        private Animation dieAnimation;
+        private SpriteEffects effects = SpriteEffects.None;
+        private Sprite sprite;
+
+        private SoundEffect killedSound;
+        private SoundEffect shootSound;
+
+
+        public Map Map
+        {
+            get { return map; }
+        }
+        Map map;
+
+        public bool IsAlive
+        {
+            get { return isAlive; }
+        }
+        bool isAlive;
+
+        // Physics state
+        public Vector2 Position
+        {
+            get { return position; }
+            set { position = value; }
+        }
+        Vector2 position;
+
+        public float Angle
+        {
+            get { return angle; }
+        }
+        float angle;
+
+        private float previousBottom;
+
+        public Vector2 Velocity
+        {
+            get { return velocity; }
+            set { velocity = value; }
+        }
+        Vector2 velocity;
+
+        private const float WalkSpeed = 150.0f;
+        private const float RunSpeed = 250.0f;
+
+        private bool isShooting;
+        private float shootWait;
+        
+        
+        private bool isRunning;
+
+        private float movementX;
+        private float movementY;
+
+
+        public Vector2 MousePosition
+        {
+            get { return mousePosition; }
+        }
+        public Vector2 mousePosition;
+
+        private Rectangle localBounds;
+
+        public Rectangle BoundingRectangle
+        {
+            get
+            {
+                int left = (int)Math.Round(Position.X - sprite.Origin.X) + localBounds.X;
+                int top = (int)Math.Round(Position.Y - sprite.Origin.Y) + localBounds.Y;
+
+                return new Rectangle(left, top, localBounds.Width, localBounds.Height);
+            }
+        }
+
+        public Player(Map map, Vector2 position)
+        {
+            this.map = map;
+
+            LoadContent();
+
+            Reset(position);
+        }
+
+        public void LoadContent()
+        {
+            // Load animated textures.
+            idleAnimation = new Animation(map.Content.Load<Texture2D>("Sprites/Player/PlayerIdle"), 0.1f, true);
+            runAnimation = new Animation(map.Content.Load<Texture2D>("Sprites/Player/PlayerIdle"), 0.1f, true);//new Animation(map.Content.Load<Texture2D>("Sprites/Player/Run"), 0.1f, true);
+            shootAnimation = new Animation(map.Content.Load<Texture2D>("Sprites/Player/PlayerIdle"), 0.1f, true);// new Animation(map.Content.Load<Texture2D>("Sprites/Player/Shoot"), 0.1f, false);
+            dieAnimation = new Animation(map.Content.Load<Texture2D>("Sprites/Player/PlayerIdle"), 0.1f, true);//new Animation(map.Content.Load<Texture2D>("Sprites/Player/Die"), 0.1f, false);aw
+
+            // Calculate bounds within texture size.            
+            int width = (int)(idleAnimation.FrameWidth * 0.8);// (int)(idleAnimation.FrameWidth * 0.4);
+            int left = (idleAnimation.FrameWidth - width) / 2;
+            int height = (int)(idleAnimation.FrameWidth * 0.8);
+            int top = (idleAnimation.FrameHeight - height) / 2;
+            localBounds = new Rectangle(left, top, width, height);
+
+            // Load sounds.            
+            //killedSound = map.Content.Load<SoundEffect>("Sounds/PlayerKilled");
+            //shootSound = map.Content.Load<SoundEffect>("Sounds/PlayerShoot");
+        }
+
+        public void Reset(Vector2 position)
+        {
+            shootWait = 0.0f;
+            isShooting = false;
+            isRunning = false;
+            Position = position;
+            Velocity = Vector2.Zero;
+            isAlive = true;
+            mousePosition = position;
+            Mouse.SetPosition((int)mousePosition.X, (int)mousePosition.Y);
+            sprite.PlayAnimation(idleAnimation);
+        }
+
+        public void Update(
+            GameTime gameTime,
+            KeyboardState keyboardState,
+            MouseState mouseState,
+            Vector2 screenCenter,
+            //TouchCollection touchState, 
+            //AccelerometerState accelState,
+            DisplayOrientation orientation)
+        {
+
+            GetInput(keyboardState, mouseState, screenCenter, orientation, gameTime);
+
+            ApplyPhysics(gameTime);
+
+            if (IsAlive)
+            {
+                if (Math.Abs(Velocity.X) - 0.02f > 0 || Math.Abs(Velocity.Y) - 0.02f > 0)
+                {
+                    sprite.PlayAnimation(runAnimation);
+                }
+                else
+                {
+                    sprite.PlayAnimation(idleAnimation);
+                }
+            }
+
+            movementX = 0.0f;
+            movementY = 0.0f;
+        }
+
+        /// <summary>
+        /// Gets player horizontal movement and jump commands from input.
+        /// </summary>
+        private void GetInput(
+            KeyboardState keyboardState,
+            MouseState mouseState,
+            Vector2 screenCenter,
+            DisplayOrientation orientation,
+            GameTime gameTime)
+        {
+            if (keyboardState.IsKeyDown(Keys.Left) ||
+                keyboardState.IsKeyDown(Keys.A))
+            {
+                movementX = -1.0f;
+            }
+            else if (keyboardState.IsKeyDown(Keys.Right) ||
+                     keyboardState.IsKeyDown(Keys.D))
+            {
+                movementX = 1.0f;
+            }
+            else
+            {
+                movementX = 0.0f;
+            }
+
+            if (keyboardState.IsKeyDown(Keys.Down) ||
+                keyboardState.IsKeyDown(Keys.S))
+            {
+                movementY = 1.0f;
+            }
+            else if (keyboardState.IsKeyDown(Keys.Up) ||
+                     keyboardState.IsKeyDown(Keys.W))
+            {
+                movementY = -1.0f;
+            }
+            else
+            {
+                movementY = 0.0f;
+            }
+
+
+            //THIS 640 and 360 hare hard coded! FIX ASAP
+            //this.mousePosition.X += mousePosition.X;
+            //this.mousePosition.Y += mousePosition.Y;
+            mousePosition.X += mouseState.X - screenCenter.X;
+            mousePosition.Y += mouseState.Y - screenCenter.Y;
+
+            if(mouseState.LeftButton == ButtonState.Pressed)
+            {
+                isShooting = true;
+            }
+
+            if (keyboardState.IsKeyDown(Keys.LeftShift) && !isRunning ||
+                keyboardState.IsKeyDown(Keys.RightShift) && !isRunning)
+            {
+                isRunning = true;
+            }
+            else if (keyboardState.IsKeyUp(Keys.LeftShift) && isRunning ||
+                     keyboardState.IsKeyUp(Keys.RightShift) && isRunning)
+            {
+                isRunning = false;
+            }
+
+        }
+
+        protected void Shoot(GameTime gameTime)
+        {
+            if (isShooting)
+            {
+                if (shootWait == 0.0f)
+                {
+                    shootWait = 0.15f;
+                    map.ProjectileManager.CreateProjectile(position,angle,this);
+                }
+                else
+                {
+                    shootWait -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+                }
+
+                if (shootWait < 0.0f || shootWait == 0.0f)
+                {
+                    isShooting = false;
+                    shootWait = 0.0f;
+                }
+            }
+
+        }
+
+        public void ApplyPhysics(GameTime gameTime)
+        {
+            float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            angle = (float)Math.Atan2(mousePosition.Y - Position.Y, mousePosition.X - Position.X);
+            Vector2 previousPosition = Position;
+
+            Shoot(gameTime);
+
+            velocity.X = movementX;
+            velocity.Y = movementY;
+            if(velocity != Vector2.Zero)
+                velocity.Normalize();
+            velocity *= (isRunning ? RunSpeed*elapsed : WalkSpeed*elapsed);
+            Position += velocity ;
+            mousePosition += velocity;
+
+            HandleCollisions();
+            if (Position.X.Equals(previousPosition.X))
+                velocity.X = 0;
+            if (Position.Y.Equals(previousPosition.Y))
+                velocity.Y = 0;
+            
+        }
+
+        private void HandleCollisions()
+        {
+            // Get the player's bounding rectangle and find neighboring tiles.
+            Rectangle bounds = BoundingRectangle;
+            int leftTile = (int)Math.Floor((float)bounds.Left / Tile.Width);
+            int rightTile = (int)Math.Ceiling(((float)bounds.Right / Tile.Width)) - 1;
+            int topTile = (int)Math.Floor((float)bounds.Top / Tile.Height);
+            int bottomTile = (int)Math.Ceiling(((float)bounds.Bottom / Tile.Height)) - 1;
+
+
+            // For each potentially colliding tile,
+            for (int y = topTile; y <= bottomTile; ++y)
+            {
+                for (int x = leftTile; x <= rightTile; ++x)
+                {
+                    // If this tile is collidable,
+                    TileType collision = map.GetCollision(x, y);
+                    if (collision != TileType.Ground)
+                    {
+                        // Determine collision depth (with direction) and magnitude.
+                        Rectangle tileBounds = Map.GetBounds(x, y);
+                        Vector2 depth = RectangleExtensions.GetIntersectionDepth(bounds, tileBounds);
+                        if (depth != Vector2.Zero)
+                        {
+                            float absDepthX = Math.Abs(depth.X);
+                            float absDepthY = Math.Abs(depth.Y);
+
+                            // Resolve the collision along the shallow axis.
+                            if (collision == TileType.Wall)
+                            {
+                                if (absDepthY < absDepthX)
+                                {
+                                    // Resolve the collision along the Y axis.
+                                    Position = new Vector2(Position.X, Position.Y + depth.Y);
+                                    velocity.Y += depth.Y;
+                                    mousePosition.Y += depth.Y;
+                                }
+                                if (absDepthX < absDepthY)
+                                {
+                                    Position = new Vector2(Position.X + depth.X, Position.Y);
+                                    velocity.X += depth.X;
+                                    mousePosition.X += depth.X;
+                                }
+
+                                // Perform further collisions with the new bounds.
+                                bounds = BoundingRectangle;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        public void OnKilled(Zombie killedBy)
+        {
+            isAlive = false;
+            killedSound.Play();
+            sprite.PlayAnimation(dieAnimation);
+        }
+
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            sprite.Draw(gameTime, spriteBatch, Position, angle);
+        }
+
+    }
+}

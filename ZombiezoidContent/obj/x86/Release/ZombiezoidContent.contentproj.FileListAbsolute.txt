@@ -1,0 +1,2 @@
+C:\Users\Boki\Desktop\ZombiezoidSVN\trunk\Zombiezoid\ZombiezoidContent\obj\x86\Release\ResolveAssemblyReference.cache
+E:\jan2012 desktop\ZombiezoidSVN\trunk\Zombiezoid\ZombiezoidContent\obj\x86\Release\ResolveAssemblyReference.cache

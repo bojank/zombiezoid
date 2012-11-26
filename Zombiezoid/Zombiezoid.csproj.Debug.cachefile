@@ -1,0 +1,11 @@
+Content\Fonts\Hud.xnb
+Content\Sprites\Projectiles\Default.xnb
+Content\Sprites\Player\PlayerIdle.xnb
+Content\Sprites\Zombie\ZombieIdle.xnb
+Content\Tiles\Ground.xnb
+Content\Tiles\Wall.xnb
+Content\Sprites\Other\Crosshair.xnb
+Content\Sprites\Player\PlayerShoot.xnb
+Content\Sprites\Zombie\ZombieAttack.xnb
+Content\Sounds\GunShot1.xnb
+Content\Maps\test.txt

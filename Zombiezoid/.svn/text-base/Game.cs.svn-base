@@ -1,0 +1,204 @@
+using System;
+using System.IO;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+
+namespace Zombiezoid
+{
+    public class Game : Microsoft.Xna.Framework.Game
+    {
+        private GraphicsDeviceManager graphics;
+        private KeyboardState oldState;
+        private SpriteBatch spriteBatch;
+        private SpriteFont hudFont;
+        private Map map;
+        private Texture2D crosshair;
+
+        private GamePadState gamePadState;
+        private KeyboardState keyboardState;
+        private MouseState mouseState;
+        //wprivate Vector2 mousePosition;
+
+        private Vector2 screenCenter;
+        //private int cx;
+        //private int cy;
+
+        public Game()
+        {
+            graphics = new GraphicsDeviceManager(this);
+            //graphics.ToggleFullScreen();
+            //graphics.IsFullScreen = true;
+            graphics.PreferredBackBufferHeight = 720;//1080;// 600;//
+            graphics.PreferredBackBufferWidth = 1280;//1920;// 800;//
+            graphics.ApplyChanges();
+
+            Content.RootDirectory = "Content";
+        }
+
+        protected override void Initialize()
+        {
+            oldState = Keyboard.GetState();
+            base.Initialize();
+        }
+
+        protected override void LoadContent()
+        {
+            // Create a new SpriteBatch, which can be used to draw textures.
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            hudFont = Content.Load<SpriteFont>("Fonts/Hud");
+
+            this.Content.Load<Texture2D>("Sprites/Zombie/ZombieIdle");
+            this.Content.Load<Texture2D>("Sprites/Player/PlayerIdle");
+            this.Content.Load<Texture2D>("Sprites/Projectiles/Default");
+            this.Content.Load<Texture2D>("Sprites/Other/Crosshair");
+            this.Content.Load<Texture2D>("Tiles/Ground");
+            this.Content.Load<Texture2D>("Tiles/Wall");
+
+            screenCenter.X = graphics.GraphicsDevice.Viewport.Width / 2;
+            screenCenter.Y = graphics.GraphicsDevice.Viewport.Height / 2;
+
+            LoadMap("test");
+
+
+            
+            crosshair = map.Content.Load<Texture2D>("Sprites/Other/Crosshair");
+        }
+
+        protected override void UnloadContent()
+        {
+            this.Content.Unload();
+        }
+
+        protected override void Update(GameTime gameTime)
+        {
+            // Allows the game to exit
+            //mousePosition = map.Player.mousePosition;
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+                this.Exit();
+
+            UpdateInput();
+
+           
+            
+            //mousePosition.X += mouseState.X - screenCenter.X;
+            //mousePosition.Y += mouseState.Y - screenCenter.Y;
+
+            map.Update(gameTime, keyboardState, mouseState, screenCenter, Window.CurrentOrientation);
+            
+            base.Update(gameTime);
+        }
+
+        private void UpdateInput()
+        {
+            keyboardState = Keyboard.GetState();
+            gamePadState = GamePad.GetState(PlayerIndex.One);
+            mouseState = Mouse.GetState();
+            
+            //might need this.
+            //if (keyboardState.IsKeyDown(Keys.Space))
+            //{
+            //    if (!oldState.IsKeyDown(Keys.Space))
+            //    {
+            //        //Pressed
+            //    }
+            //}
+            //else if (oldState.IsKeyDown(Keys.Space))
+            //{
+            //    //Released
+            //}
+
+            if (keyboardState.IsKeyDown(Keys.Escape))
+                this.Exit();
+
+            oldState = keyboardState;
+        }
+
+        private void LoadMap(string mapName)
+        {
+
+            // Unloads the content for the current level before loading the next one.
+            if (map != null)
+                map.Dispose();
+
+            // Load the level.
+
+            string levelPath = string.Format("Content/Maps/{0}.txt", mapName);
+            using (Stream fileStream = TitleContainer.OpenStream(levelPath))
+                map = new Map(Services, fileStream);
+        }
+        protected override void Draw(GameTime gameTime)
+        {
+            GraphicsDevice.Clear(Color.Black);
+            //spriteBatch.Begin();
+            Matrix transform = Matrix.Identity *
+                        Matrix.CreateTranslation(-map.Player.Position.X, -map.Player.Position.Y, 0) *
+                        Matrix.CreateRotationZ(0.0f) *
+                        Matrix.CreateTranslation(graphics.PreferredBackBufferWidth / 2.0f, graphics.PreferredBackBufferHeight / 2.0f, 0);
+                
+
+            spriteBatch.Begin(SpriteSortMode.Immediate, null, SamplerState.LinearClamp, null, null, null, transform);
+            
+            map.Draw(gameTime, spriteBatch);
+            //mousePosition += map.Player.Velocity;
+            Mouse.SetPosition((int)screenCenter.X, (int)screenCenter.Y);
+            DrawCrosshair();
+            
+            DrawHud();
+            
+
+            //spriteBatch.End();
+            
+            
+
+            //spriteBatch.Draw(_heliTexture, _heliPosition, heliSourceRectangle, Color.White, 0.0f, new Vector2(0, 0), 0.5f, SpriteEffects.FlipHorizontally, 0.0f);
+
+            spriteBatch.End();
+
+
+            base.Draw(gameTime);
+        }
+
+        private void DrawCrosshair()
+        {
+            //Adjust crosshair position
+            Vector2 crosshairPosition = new Vector2(map.Player.MousePosition.X - crosshair.Width / 2, map.Player.MousePosition.Y - crosshair.Height / 2);
+
+            spriteBatch.Draw(crosshair, crosshairPosition, Color.White);
+        }
+
+        private void DrawHud()
+        {
+            Rectangle titleSafeArea = GraphicsDevice.Viewport.TitleSafeArea;
+            Vector2 hudLocation = new Vector2(titleSafeArea.X, titleSafeArea.Y);
+            Vector2 center = new Vector2(titleSafeArea.X + titleSafeArea.Width / 2.0f,
+                                         titleSafeArea.Y + titleSafeArea.Height / 2.0f);
+            //DrawLine(spriteBatch, 1, Color.Black, map.Player.Position, map.Player.mousePosition);
+
+            DrawShadowedString(hudFont, map.Player.mousePosition.X + " : " + map.Player.mousePosition.Y + " | ", hudLocation, Color.Black);
+
+        }
+
+        void DrawLine(SpriteBatch batch, float width, Color color, Vector2 point1, Vector2 point2)
+        {
+            Texture2D blank = new Texture2D(GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
+            blank.SetData(new[] { Color.White });
+
+            float length = Vector2.Distance(point1, point2);
+
+            batch.Draw(blank, point1, null, color,
+                       map.Player.Angle, Vector2.Zero, new Vector2(length, width),
+                       SpriteEffects.None, 0);
+        }
+
+        private void DrawShadowedString(SpriteFont font, string value, Vector2 position, Color color)
+        {
+            spriteBatch.DrawString(font, value, position + new Vector2(1.0f, 1.0f), Color.Black);
+            spriteBatch.DrawString(font, value, position, color);
+        }
+    }
+}
